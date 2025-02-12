@@ -178,19 +178,20 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?= $row['customerAddress']; ?></td>
                                 <td><?= $row['receiverName']; ?></td>
                                 <td><?= $row['receiverPhone']; ?></td>
-                                <!-- <td class="text-center"><a href="#" class="btn btn-warning btn-sm">แก้ไข</a></td> -->
-                                <!-- Start Edit -->
-                                <td>
-                                    <!-- Button edit -->
+                                <td> <!-- Start Edit -->
                                      <form action="edit_customer.php" method="POST">
                                         <input type="hidden" name="id" value="<?=$row['id']?>">
                                         <input type="hidden" name="act" value="edit">
                                         <button type="submit" class="btn btn-warning btn-sm">แก้ไข</button>
                                      </form>
-                                     <!-- Button edit -->
-                                    <!-- End Edit -->
-                                </td>
-                                <td class="text-center"><a href="#" class="btn btn-danger btn-sm">ลบ</a></td>
+                                </td> <!-- End Edit -->
+                                <td> <!-- Start Delete -->
+                                     <form action="delete_customer.php" method="POST">
+                                        <input type="hidden" name="id" value="<?=$row['id']?>">
+                                        <input type="hidden" name="act" value="delete">
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('ยืนยันการลบข้อมูล !!');">ลบ</button>
+                                     </form>
+                                </td> <!-- End Delete -->
                             </tr>
                         <?php } ?>
                     </tbody>
