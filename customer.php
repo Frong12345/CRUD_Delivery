@@ -179,58 +179,16 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?= $row['receiverName']; ?></td>
                                 <td><?= $row['receiverPhone']; ?></td>
                                 <!-- <td class="text-center"><a href="#" class="btn btn-warning btn-sm">แก้ไข</a></td> -->
+                                <!-- Start Edit -->
                                 <td>
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editCustomerModal">แก้ไข</button>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModelLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="editCustomerModelLabel">เพิ่มลูกค้าใหม่</h1>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form action="" method="post">
-
-                                                        <div class="mb-3">
-                                                            <label class="form-label">ชื่อ-สกุล</label>
-                                                            <input type="text" class="form-control" name="customerName" required>
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label class="form-label">เบอร์โทร</label>
-                                                            <input type="text" class="form-control" name="customerPhone" required>
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label class="form-label">บริษัท</label>
-                                                            <input type="text" class="form-control" name="customerCompany" required>
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label class="form-label">ที่อยู่</label>
-                                                            <input type="text" class="form-control" name="customerAddress" required>
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label class="form-label">ชื่อคนรับของ</label>
-                                                            <input type="text" class="form-control" name="receiverName" required>
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label class="form-label">เบอร์คนรับของ</label>
-                                                            <input type="text" class="form-control" name="receiverPhone" required>
-                                                        </div>
-
-                                                        <div>
-                                                            <button type="submit" name="action" value="add" class="btn btn-primary">บันทึก</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div> <!--End modal-content -->
-                                        </div>
-                                    </div> <!--End modal-fade -->
+                                    <!-- Button edit -->
+                                     <form action="edit_customer.php" method="POST">
+                                        <input type="hidden" name="id" value="<?=$row['id']?>">
+                                        <input type="hidden" name="act" value="edit">
+                                        <button type="submit" class="btn btn-warning btn-sm">แก้ไข</button>
+                                     </form>
+                                     <!-- Button edit -->
+                                    <!-- End Edit -->
                                 </td>
                                 <td class="text-center"><a href="#" class="btn btn-danger btn-sm">ลบ</a></td>
                             </tr>
