@@ -20,7 +20,7 @@ if (isset($_POST['customerName']) && isset($_POST['action']) && $_POST['action']
         $receiverPhone = $_POST['receiverPhone'];
 
         //sql insert
-        $stmtinsert = $condb->prepare("INSERT tb_customer
+        $stmtInsert = $condb->prepare("INSERT tb_customer
         
         (customerName,customerPhone,customerCompany,
         customerAddress,receiverName,receiverPhone
@@ -35,15 +35,15 @@ if (isset($_POST['customerName']) && isset($_POST['action']) && $_POST['action']
         ");
 
         //bindparam STR // INT
-        $stmtinsert->bindparam(':customerName', $customerName, PDO::PARAM_STR);
-        $stmtinsert->bindparam(':customerPhone', $customerPhone, PDO::PARAM_STR);
-        $stmtinsert->bindparam(':customerCompany', $customerCompany, PDO::PARAM_STR);
-        $stmtinsert->bindparam(':customerAddress', $customerAddress, PDO::PARAM_STR);
-        $stmtinsert->bindparam(':receiverName', $receiverName, PDO::PARAM_STR);
-        $stmtinsert->bindparam(':receiverPhone', $receiverPhone, PDO::PARAM_STR);
+        $stmtInsert->bindparam(':customerName', $customerName, PDO::PARAM_STR);
+        $stmtInsert->bindparam(':customerPhone', $customerPhone, PDO::PARAM_STR);
+        $stmtInsert->bindparam(':customerCompany', $customerCompany, PDO::PARAM_STR);
+        $stmtInsert->bindparam(':customerAddress', $customerAddress, PDO::PARAM_STR);
+        $stmtInsert->bindparam(':receiverName', $receiverName, PDO::PARAM_STR);
+        $stmtInsert->bindparam(':receiverPhone', $receiverPhone, PDO::PARAM_STR);
 
         //ถ้า stmtinsert ทำงานถูกต้อง 
-        if ($stmtinsert->execute()) {
+        if ($stmtInsert->execute()) {
             echo '<script>
                  setTimeout(function() {
                   swal({
@@ -59,7 +59,7 @@ if (isset($_POST['customerName']) && isset($_POST['action']) && $_POST['action']
 
     } //catch exception
     catch (Exception $e) {
-        // echo 'Message: ' .$e->getMessage();
+        echo 'Message: ' .$e->getMessage();
         exit;
         echo '<script>
                         setTimeout(function() {

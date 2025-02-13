@@ -121,12 +121,12 @@ if (isset($_POST['customerName']) && isset($_POST['action']) && $_POST['action']
 
                     <div class="mb-3">
                         <label class="form-label">ชื่อคนรับของ</label>
-                        <input type="text" class="form-control" name="receiverName" required>
+                        <input type="text" class="form-control" name="receiverName">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">เบอร์คนรับของ</label>
-                        <input type="text" class="form-control" name="receiverPhone" required>
+                        <input type="text" class="form-control" name="receiverPhone">
                     </div>
 
                     <div class="text-center">
