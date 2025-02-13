@@ -179,14 +179,14 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?= $row['receiverName']; ?></td>
                                 <td><?= $row['receiverPhone']; ?></td>
                                 <td> <!-- Start Edit -->
-                                     <form action="edit_customer.php" method="POST">
+                                     <form action="manage_edit_customer.php" method="POST">
                                         <input type="hidden" name="id" value="<?=$row['id']?>">
                                         <input type="hidden" name="act" value="edit">
                                         <button type="submit" class="btn btn-warning btn-sm">แก้ไข</button>
                                      </form>
                                 </td> <!-- End Edit -->
                                 <td> <!-- Start Delete -->
-                                     <form action="delete_customer.php" method="POST">
+                                     <form action="manage_delete_customer.php" method="POST">
                                         <input type="hidden" name="id" value="<?=$row['id']?>">
                                         <input type="hidden" name="act" value="delete">
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('ยืนยันการลบข้อมูล !!');">ลบ</button>

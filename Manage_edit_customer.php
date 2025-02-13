@@ -66,7 +66,7 @@ try {
                   title: "บันทึกข้อมูลสำเร็จ",
                   type: "success"
               }, function() {
-                  window.location = "customer.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "manage_customer.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';
@@ -81,7 +81,7 @@ try {
                   text: "กรุณาติดต่อผู้ดูแลระบบ",
                   type: "error"
               }, function() {
-                  window.location = "index.php";
+                  window.location = "manage_customer.php";
               });
             }, 1000);
         </script>';

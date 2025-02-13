@@ -34,7 +34,7 @@ if(isset($_POST['id']) && isset($_POST['act'])&& $_POST['act']=='delete'){
                         title: "ลบข้อมูลสำเร็จ",
                         type: "success"
                     }, function() {
-                        window.location = "customer.php"; //หน้าที่ต้องการให้กระโดดไป
+                        window.location = "manage_customer.php"; //หน้าที่ต้องการให้กระโดดไป
                     });
                     }, 1000);
                 </script>';
@@ -50,7 +50,7 @@ if(isset($_POST['id']) && isset($_POST['act'])&& $_POST['act']=='delete'){
                   text: "กรุณาติดต่อผู้ดูแลระบบ",
                   type: "error"
               }, function() {
-                  window.location = "customer.php";
+                  window.location = "manage_customer.php";
               });
             }, 1000);
         </script>';
